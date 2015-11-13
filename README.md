@@ -61,3 +61,8 @@ a Dockerfile something like this sample one. It pulls in the
 installs them into a virtualenv (requiring no network access). Then it
 brings in the rest of the application, runs the tests inside the
 container, exposes ports, etc.
+
+# todo:
+
+* work out a similar approach to handle nodejs dependencies
+* jshint + jscs included in build steps
