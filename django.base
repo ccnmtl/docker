@@ -1,0 +1,19 @@
+FROM ubuntu:trusty
+RUN apt-get update
+RUN apt-get install -qyy \
+		-o APT::Install-Recommends=false -o APT::Install-Suggests=false \
+		binutils \
+		nodejs \
+		npm \
+		openssl \
+    postgresql-client \
+    python-beautifulsoup \
+    python-imaging \
+    python-ldap \
+		python-setuptools \
+		python-virtualenv \
+    python-tk 
+ENV PYTHONUNBUFFERED 1
+RUN ln -s /usr/bin/nodejs /usr/local/bin/node
+RUN virtualenv /ve
+RUN /ve/bin/pip install -U pip
