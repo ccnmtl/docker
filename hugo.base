@@ -1,0 +1,10 @@
+FROM debian:jessie
+RUN apt-get update \
+ && apt-get install nodejs npm -y \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+ADD https://github.com/spf13/hugo/releases/download/v0.18.1/hugo_0.18.1-64bit.deb /tmp/hugo.deb
+RUN dpkg -i /tmp/hugo.deb
+RUN mkdir /app/
+EXPOSE 1313
