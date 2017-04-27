@@ -17,4 +17,6 @@ ENV PYTHONUNBUFFERED 1
 RUN ln -s /usr/bin/nodejs /usr/local/bin/node \
 && pip install virtualenv \
 && virtualenv /ve \
-&& /ve/bin/pip install -U pip
+&& /ve/bin/pip install -U pip \
+&& mkdir -p /requirements/src/
+COPY files/pysqlite-2.6.3.tar.gz /requirements/src/pysqlite-2.6.3.tar.gz

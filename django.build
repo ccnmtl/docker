@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -qy \
 		libldap2-dev \
 		libpq-dev  \
 		libsasl2-dev \
+		libspatialite-dev \
+		libsqlite3-dev \
 		libssl-dev \
 		libxft-dev \
 		libxml2-dev \
@@ -21,6 +23,7 @@ RUN apt-get update && apt-get install -qy \
 		python-dev \
 		python-beautifulsoup \
 		python-ldap \
+		python-pysqlite2 \
 		python-tk \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
