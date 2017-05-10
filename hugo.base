@@ -4,7 +4,7 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 RUN ln -s /usr/bin/nodejs /usr/bin/node
-ADD https://github.com/spf13/hugo/releases/download/v0.18.1/hugo_0.18.1-64bit.deb /tmp/hugo.deb
+ADD https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.deb /tmp/hugo.deb
 RUN dpkg -i /tmp/hugo.deb
 RUN mkdir /app/
 EXPOSE 1313
