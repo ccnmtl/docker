@@ -1,21 +1,22 @@
-FROM debian:jessie
+FROM debian:bullseye-slim
 RUN apt-get update && apt-get install -qyy \
 		-o APT::Install-Recommends=false -o APT::Install-Suggests=false \
 		curl \
 		libjpeg-dev \
 		postgresql-client \
-		python-imaging \
-		python-pip \
-		python-setuptools \
+		python3-pil \
+		python3-pip \
+		python3-setuptools \
+                python3-venv \
 		openssl \
-&& curl -sL https://deb.nodesource.com/setup_6.x -o /tmp/nodesetup.sh \
+&& curl -sL https://deb.nodesource.com/setup_lts.x -o /tmp/nodesetup.sh \
 && /bin/bash /tmp/nodesetup.sh \
 && apt-get install -qyy nodejs \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 ENV PYTHONUNBUFFERED 1
 RUN ln -s /usr/bin/nodejs /usr/local/bin/node \
-&& pip install virtualenv \
+&& pip3 install virtualenv \
 && virtualenv /ve \
 && /ve/bin/pip install -U pip \
 && mkdir -p /requirements/src/
