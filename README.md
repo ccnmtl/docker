@@ -8,7 +8,7 @@ but modified to suit some of our existing conventions and needs.
 
 ## ccnmtl/django.base
 
-General, all-purpose django base image. Based on Debian Jessie. Both
+General, all-purpose django base image. Based on Debian Bullseye. Both
 the `django.build` and any run containers use it as a base.
 
 ## ccnmtl/django.build
